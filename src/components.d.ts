@@ -20,6 +20,8 @@ export namespace Components {
          */
         "middle": string;
     }
+    interface StellarWallet {
+    }
 }
 declare global {
     interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {
@@ -28,8 +30,15 @@ declare global {
         prototype: HTMLMyComponentElement;
         new (): HTMLMyComponentElement;
     };
+    interface HTMLStellarWalletElement extends Components.StellarWallet, HTMLStencilElement {
+    }
+    var HTMLStellarWalletElement: {
+        prototype: HTMLStellarWalletElement;
+        new (): HTMLStellarWalletElement;
+    };
     interface HTMLElementTagNameMap {
         "my-component": HTMLMyComponentElement;
+        "stellar-wallet": HTMLStellarWalletElement;
     }
 }
 declare namespace LocalJSX {
@@ -47,8 +56,11 @@ declare namespace LocalJSX {
          */
         "middle"?: string;
     }
+    interface StellarWallet {
+    }
     interface IntrinsicElements {
         "my-component": MyComponent;
+        "stellar-wallet": StellarWallet;
     }
 }
 export { LocalJSX as JSX };
@@ -56,6 +68,7 @@ declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
             "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
+            "stellar-wallet": LocalJSX.StellarWallet & JSXBase.HTMLAttributes<HTMLStellarWalletElement>;
         }
     }
 }
