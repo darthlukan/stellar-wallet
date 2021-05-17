@@ -5,30 +5,20 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
+import { Prompter } from "./components/stellar-prompt/stellar-prompt";
 export namespace Components {
-    interface MyComponent {
-        /**
-          * The first name
-         */
-        "first": string;
-        /**
-          * The last name
-         */
-        "last": string;
-        /**
-          * The middle name
-         */
-        "middle": string;
+    interface StellarPrompt {
+        "prompter": Prompter;
     }
     interface StellarWallet {
     }
 }
 declare global {
-    interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {
+    interface HTMLStellarPromptElement extends Components.StellarPrompt, HTMLStencilElement {
     }
-    var HTMLMyComponentElement: {
-        prototype: HTMLMyComponentElement;
-        new (): HTMLMyComponentElement;
+    var HTMLStellarPromptElement: {
+        prototype: HTMLStellarPromptElement;
+        new (): HTMLStellarPromptElement;
     };
     interface HTMLStellarWalletElement extends Components.StellarWallet, HTMLStencilElement {
     }
@@ -37,29 +27,18 @@ declare global {
         new (): HTMLStellarWalletElement;
     };
     interface HTMLElementTagNameMap {
-        "my-component": HTMLMyComponentElement;
+        "stellar-prompt": HTMLStellarPromptElement;
         "stellar-wallet": HTMLStellarWalletElement;
     }
 }
 declare namespace LocalJSX {
-    interface MyComponent {
-        /**
-          * The first name
-         */
-        "first"?: string;
-        /**
-          * The last name
-         */
-        "last"?: string;
-        /**
-          * The middle name
-         */
-        "middle"?: string;
+    interface StellarPrompt {
+        "prompter"?: Prompter;
     }
     interface StellarWallet {
     }
     interface IntrinsicElements {
-        "my-component": MyComponent;
+        "stellar-prompt": StellarPrompt;
         "stellar-wallet": StellarWallet;
     }
 }
@@ -67,7 +46,7 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
-            "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
+            "stellar-prompt": LocalJSX.StellarPrompt & JSXBase.HTMLAttributes<HTMLStellarPromptElement>;
             "stellar-wallet": LocalJSX.StellarWallet & JSXBase.HTMLAttributes<HTMLStellarWalletElement>;
         }
     }

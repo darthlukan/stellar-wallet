@@ -15,7 +15,7 @@ export interface Prompter {
   styleUrl: "stellar-prompt.scss",
   shadow: true,
 })
-export class Prompt {
+export class StellarPrompt {
   @Element() private element: HTMLElement;
 
   @Prop({ mutable: true }) prompter: Prompter;

@@ -21,7 +21,8 @@ interface StellarAccount {
   styleUrl: "stellar-wallet.scss",
   shadow: true,
 })
-export class Wallet {
+
+export class StellarWallet {
   @State() account: StellarAccount;
   @State() prompter: Prompter = { show: false };
   @State() error: any = null;
@@ -40,5 +41,5 @@ export class Wallet {
   setPrompt = setPrompt;
 }
 
-Wallet.prototype.componentWillLoad = componentWillLoad;
-Wallet.prototype.render = render;
+StellarWallet.prototype.componentWillLoad = componentWillLoad;
+StellarWallet.prototype.render = render;
