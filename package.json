@@ -26,6 +26,8 @@
   },
   "license": "MIT",
   "devDependencies": {
+    "@capacitor/cli": "^2.4.7",
+    "@capacitor/core": "^2.4.7",
     "@stencil/postcss": "^1.0.1",
     "@stencil/sass": "^1.4.1",
     "@types/autoprefixer": "^9.7.2",
